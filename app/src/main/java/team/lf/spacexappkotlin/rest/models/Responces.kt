@@ -64,29 +64,29 @@ data class Links(
 
 data class CompanyInfo(
     @SerializedName("name")
-    private var mName: String,
+    val mName: String,
     @SerializedName("founder")
-    private var mFounder: String,
+    val mFounder: String,
     @SerializedName("founded")
-    private var mFounded: Int,
+    val mFounded: Int,
     @SerializedName("employees")
-    private var mEmployees: Int,
+    val mEmployees: Int,
     @SerializedName("vehicles")
-    private var mVehicles: Int,
+    val mVehicles: Int,
     @SerializedName("launch_sites")
-    private var mLaunchSites: Int,
+    val mLaunchSites: Int,
     @SerializedName("test_sites")
-    private var mTestSites: Int,
+    val mTestSites: Int,
     @SerializedName("ceo")
-    private var mCeo: String,
+    val mCeo: String,
     @SerializedName("cto")
-    private var mCto: String,
+    val mCto: String,
     @SerializedName("coo")
-    private var mCoo: String,
+    val mCoo: String,
     @SerializedName("cto_propulsion")
-    private var mCtoPropulsion: String,
+    val mCtoPropulsion: String,
     @SerializedName("valuation")
-    private var mValuation: Long,
+    val mValuation: Long,
     @SerializedName("summary")
-    private var mSummary: String
+    val mSummary: String
 )

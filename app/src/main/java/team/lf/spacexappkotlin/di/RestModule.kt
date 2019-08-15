@@ -9,6 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import team.lf.spacexappkotlin.rest.SpaceApi
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
@@ -38,8 +39,8 @@ class RestModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
 
-//    @Provides
-//    @Singleton
-//    fun provideGeckoApiService(@Named("SPACEX_API") retrofit: Retrofit):CoinGeckoApi =
-//        retrofit.create(CoinGeckoApi::class.java)
+    @Provides
+    @Singleton
+    fun provideGeckoApiService(@Named("SPACEX_API") retrofit: Retrofit):SpaceApi =
+        retrofit.create(SpaceApi::class.java)
 }
