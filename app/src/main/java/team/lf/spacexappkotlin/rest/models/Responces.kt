@@ -10,7 +10,7 @@ data class Launch(
     @SerializedName("launch_year")
     val mLaunchYear: String,
     @SerializedName("launch_date_unix")
-    val mLaunchDateUnix: Int,
+    val mLaunchDateUnix: Long,
     @SerializedName("launch_date_utc")
     val mLaunchDateUtc: String,
     @SerializedName("launch_date_local")

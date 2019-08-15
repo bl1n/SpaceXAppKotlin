@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.li_launch.view.*
 import team.lf.spacexappkotlin.R
+import team.lf.spacexappkotlin.formatters.dateToString
 import team.lf.spacexappkotlin.rest.models.Launch
 
 class LaunchesAdapter : BaseAdapter<LaunchesAdapter.LaunchViewHolder>() {
@@ -24,7 +25,7 @@ class LaunchesAdapter : BaseAdapter<LaunchesAdapter.LaunchViewHolder>() {
                 Glide.with(view.context).load(item.mLinks.mMissionPatchSmall).into(view.li_mission_patch_small)
                 view.li_mission_name.text = item.mMissionName
                 view.li_flight_number.text = item.mFlightNumber
-                view.li_launch_date.text = item.mLaunchDateUtc
+                view.li_launch_date.text = dateToString(item.mLaunchDateUnix)
             }
         }
 
