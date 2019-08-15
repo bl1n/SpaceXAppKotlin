@@ -1,7 +1,9 @@
 package team.lf.spacexappkotlin.di
 
 import dagger.Component
-import team.lf.spacexappkotlin.MainActivity
+import team.lf.spacexappkotlin.activities.MainActivity
+import team.lf.spacexappkotlin.mvp.fragments.AboutFragment
+import team.lf.spacexappkotlin.mvp.presenters.AboutPresenter
 
 import javax.inject.Singleton
 
@@ -9,5 +11,7 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
     fun inject(mainActivity: MainActivity)
+    fun inject(aboutPresenter: AboutPresenter)
+    fun inject(aboutFragment: AboutFragment)
 
 }

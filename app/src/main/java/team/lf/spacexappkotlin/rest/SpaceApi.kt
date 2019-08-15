@@ -3,6 +3,7 @@ package team.lf.spacexappkotlin.rest
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
+import team.lf.spacexappkotlin.rest.models.CompanyInfo
 import team.lf.spacexappkotlin.rest.models.Launch
 
 interface SpaceApi {
@@ -12,6 +13,9 @@ interface SpaceApi {
 
     @GET("launches/{id}")
     fun getLaunch(@Path("id")id:String):Observable<Launch>
+
+    @GET("info")
+    fun getCompanyInfo():Observable<CompanyInfo>
 
 //    @GET("history")
 //    abstract fun getHistoryEvents(): Single<List<HistoryEvent>>
