@@ -61,3 +61,32 @@ data class Links(
     @SerializedName("flickr_images")
     val mFlickrImages: List<String>
 )
+
+data class CompanyInfo(
+    @SerializedName("name")
+    private var mName: String,
+    @SerializedName("founder")
+    private var mFounder: String,
+    @SerializedName("founded")
+    private var mFounded: Int,
+    @SerializedName("employees")
+    private var mEmployees: Int,
+    @SerializedName("vehicles")
+    private var mVehicles: Int,
+    @SerializedName("launch_sites")
+    private var mLaunchSites: Int,
+    @SerializedName("test_sites")
+    private var mTestSites: Int,
+    @SerializedName("ceo")
+    private var mCeo: String,
+    @SerializedName("cto")
+    private var mCto: String,
+    @SerializedName("coo")
+    private var mCoo: String,
+    @SerializedName("cto_propulsion")
+    private var mCtoPropulsion: String,
+    @SerializedName("valuation")
+    private var mValuation: Long,
+    @SerializedName("summary")
+    private var mSummary: String
+)
