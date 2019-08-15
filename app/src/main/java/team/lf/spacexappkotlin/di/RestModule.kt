@@ -1,4 +1,4 @@
-package team.lf.cryptoapp.di
+package team.lf.spacexappkotlin.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

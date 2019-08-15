@@ -1,4 +1,4 @@
-package team.lf.cryptoapp.di
+package team.lf.spacexappkotlin.di
 
 import android.app.Application
 
