@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_with_container.*
+import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -84,9 +84,7 @@ class LaunchesFragment : BaseFragment(), LaunchesContract.View {
 
     override fun openLaunch(flightNumber: String) {
         val intent = Intent(context, LaunchInfoActivity::class.java)
-        val bundle = Bundle()
-        bundle.putString(FLIGHT_NUMBER, flightNumber)
-        intent.putExtra(LAUNCH_BUNDLE, bundle)
+        intent.putExtra(FLIGHT_NUMBER,flightNumber)
         startActivity(intent)
     }
 }

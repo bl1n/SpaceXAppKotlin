@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_with_container.*
-import kotlinx.android.synthetic.main.activity_with_container.progress
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fr_about.*
 import team.lf.spacexappkotlin.R
