@@ -2,6 +2,7 @@ package team.lf.spacexappkotlin.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.widget.AdapterView
 
 abstract class BaseAdapter<VH : BaseAdapter.BaseViewHolder> : RecyclerView.Adapter<VH>() {
     var items: ArrayList<Any> = ArrayList()
@@ -23,6 +24,8 @@ abstract class BaseAdapter<VH : BaseAdapter.BaseViewHolder> : RecyclerView.Adapt
 
     abstract class BaseViewHolder(protected val view: View) : RecyclerView.ViewHolder(view) {
         abstract fun bind(item: Any)
+
+
 
     }
 }

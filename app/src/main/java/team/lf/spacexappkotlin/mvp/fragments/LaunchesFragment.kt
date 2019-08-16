@@ -1,18 +1,25 @@
 package team.lf.spacexappkotlin.mvp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_about.*
+import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import team.lf.spacexappkotlin.R
+import team.lf.spacexappkotlin.activities.LaunchInfoActivity
 import team.lf.spacexappkotlin.adapters.BaseAdapter
 import team.lf.spacexappkotlin.adapters.LaunchesAdapter
 import team.lf.spacexappkotlin.di.App
+import team.lf.spacexappkotlin.events.OpenLaunch
 import team.lf.spacexappkotlin.mvp.contracts.LaunchesContract
 import team.lf.spacexappkotlin.mvp.presenters.LaunchesPresenter
 import team.lf.spacexappkotlin.rest.models.Launch
+import team.lf.spacexappkotlin.utils.FLIGHT_NUMBER
 import javax.inject.Inject
 
 class LaunchesFragment : BaseFragment(), LaunchesContract.View {
@@ -58,11 +65,25 @@ class LaunchesFragment : BaseFragment(), LaunchesContract.View {
     }
     override fun onResume() {
         super.onResume()
+        EventBus.getDefault().register(this)
         presenter.attach(this)
     }
 
     override fun onPause() {
         super.onPause()
         presenter.detach()
+        EventBus.getDefault().unregister(this)
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun openLaunch(openLaunch: OpenLaunch){
+        openLaunch(openLaunch.flightNumber)
+//        Toast.makeText(context, "Flight number is " + openLaunch.flightNumber, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun openLaunch(flightNumber: String) {
+        val intent = Intent(context, LaunchInfoActivity::class.java)
+        intent.putExtra(FLIGHT_NUMBER,flightNumber)
+        startActivity(intent)
     }
 }

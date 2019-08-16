@@ -10,6 +10,7 @@ class LaunchesContract {
         fun hideProgress()
         fun showErrorMessage(error:String?)
         fun refresh()
+        fun openLaunch(flightNumber: String)
     }
     abstract class Presenter: BaseContract.Presenter<View>(){
         abstract fun makeList()

@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_about.*
-import kotlinx.android.synthetic.main.activity_about.progress
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fr_about.*
 import team.lf.spacexappkotlin.R
@@ -19,6 +17,7 @@ import team.lf.spacexappkotlin.rest.models.CompanyInfo
 import javax.inject.Inject
 
 class AboutFragment : Fragment(), AboutContract.View {
+
     @Inject
     lateinit var presenter: AboutPresenter
 
