@@ -20,7 +20,6 @@ import team.lf.spacexappkotlin.mvp.contracts.LaunchesContract
 import team.lf.spacexappkotlin.mvp.presenters.LaunchesPresenter
 import team.lf.spacexappkotlin.rest.models.Launch
 import team.lf.spacexappkotlin.utils.FLIGHT_NUMBER
-import team.lf.spacexappkotlin.utils.LAUNCH_BUNDLE
 import javax.inject.Inject
 
 class LaunchesFragment : BaseFragment(), LaunchesContract.View {

@@ -3,7 +3,7 @@ package team.lf.spacexappkotlin.di
 import dagger.Component
 import team.lf.spacexappkotlin.activities.MainActivity
 import team.lf.spacexappkotlin.mvp.fragments.AboutFragment
-import team.lf.spacexappkotlin.mvp.fragments.LaunchFragment
+import team.lf.spacexappkotlin.mvp.fragments.LaunchInfoFragment
 import team.lf.spacexappkotlin.mvp.fragments.LaunchesFragment
 import team.lf.spacexappkotlin.mvp.presenters.AboutPresenter
 import team.lf.spacexappkotlin.mvp.presenters.LaunchInfoPresenter
@@ -20,6 +20,6 @@ interface AppComponent {
     fun inject(launchesPresenter: LaunchesPresenter)
     fun inject(launchesFragment: LaunchesFragment)
     fun inject(launchInfoPresenter: LaunchInfoPresenter)
-    fun inject(launchFragment: LaunchFragment)
+    fun inject(launchFragment: LaunchInfoFragment)
 
 }

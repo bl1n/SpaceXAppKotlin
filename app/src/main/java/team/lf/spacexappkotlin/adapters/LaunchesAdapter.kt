@@ -29,7 +29,6 @@ class LaunchesAdapter : BaseAdapter<LaunchesAdapter.LaunchViewHolder>() {
                 view.li_launch_date.text = item.mLaunchDateUnix.dateToString()
                 view.setOnClickListener {
                     EventBus.getDefault().post(OpenLaunch(item.mFlightNumber))
-
                 }
             }
         }

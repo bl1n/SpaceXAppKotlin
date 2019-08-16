@@ -25,6 +25,10 @@ class LaunchInfoPresenter : LaunchInfoContract.Presenter() {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext {
                 view.showInfo(it)
+                val mFlickrImages = it.mLinks.mFlickrImages
+                for(uri in mFlickrImages){
+                    view.addImage(uri)
+                }
             }
             .doOnComplete {
                 view.hideProgress()
@@ -38,5 +42,9 @@ class LaunchInfoPresenter : LaunchInfoContract.Presenter() {
                 it.printStackTrace()
             })
         )
+    }
+
+    override fun refreshList() {
+        view.refresh()
     }
 }

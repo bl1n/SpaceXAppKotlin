@@ -8,8 +8,13 @@ class LaunchInfoContract {
         fun showProgress()
         fun hideProgress()
         fun showErrorMessage(error: String?)
+        fun addImage(url:String)
+        fun notifyAdapter()
+        fun refresh()
     }
     abstract class Presenter:BaseContract.Presenter<View>(){
         abstract fun loadInfo(flightNumber:String)
+        abstract fun refreshList()
+
     }
 }
