@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fr_launch.*
 import team.lf.spacexappkotlin.R
@@ -17,6 +18,7 @@ import team.lf.spacexappkotlin.mvp.presenters.LaunchInfoPresenter
 import team.lf.spacexappkotlin.rest.models.Launch
 import team.lf.spacexappkotlin.utils.FLIGHT_NUMBER
 import team.lf.spacexappkotlin.utils.LAUNCH_BUNDLE
+import team.lf.spacexappkotlin.utils.dateToString
 import javax.inject.Inject
 
 class LaunchFragment: Fragment(), LaunchInfoContract.View {
@@ -51,8 +53,10 @@ class LaunchFragment: Fragment(), LaunchInfoContract.View {
     }
 
     override fun showInfo(launch: Launch) {
-        textView.text = launch.mMissionName
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        launch_info_flight_number.text = launch.mFlightNumber
+        launch_info_mission_name.text = launch.mMissionName
+        launch_info_date.text = launch.mLaunchDateUnix.dateToString()
+        Glide.with(requireActivity()).load(launch.mLinks.mMissionPatch).into(launch_info_iv_mission_patch)
     }
 
     override fun showProgress() {
