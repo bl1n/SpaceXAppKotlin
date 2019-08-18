@@ -16,7 +16,7 @@ abstract class BaseFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewManager = LinearLayoutManager(context)
+        viewManager = createManagerInstance()
         viewAdapter = createAdapterInstance()
         recyclerView = recycler.apply{
             setHasFixedSize(true)
@@ -24,6 +24,9 @@ abstract class BaseFragment: Fragment() {
             adapter = viewAdapter
         }
     }
+
+    abstract fun createManagerInstance(): RecyclerView.LayoutManager
+
 
     abstract fun createAdapterInstance(): BaseAdapter<*>
 

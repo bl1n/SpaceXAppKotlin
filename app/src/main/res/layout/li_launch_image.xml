@@ -8,5 +8,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/li_launch_image"/>
+            android:id="@+id/li_launch_image" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="4dp" android:layout_marginTop="4dp"
+            app:layout_constraintHorizontal_bias="1.0"/>
 </android.support.constraint.ConstraintLayout>

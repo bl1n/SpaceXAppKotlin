@@ -2,6 +2,8 @@ package team.lf.spacexappkotlin.mvp.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -86,4 +88,6 @@ class LaunchesFragment : BaseFragment(), LaunchesContract.View {
         intent.putExtra(FLIGHT_NUMBER,flightNumber)
         startActivity(intent)
     }
+
+    override fun createManagerInstance(): RecyclerView.LayoutManager = LinearLayoutManager(requireActivity())
 }

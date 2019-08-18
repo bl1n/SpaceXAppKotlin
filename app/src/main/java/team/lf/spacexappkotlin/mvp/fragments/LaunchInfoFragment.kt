@@ -3,6 +3,8 @@ package team.lf.spacexappkotlin.mvp.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -48,10 +50,10 @@ class LaunchInfoFragment : BaseFragment(), LaunchInfoContract.View {
 
     override fun createAdapterInstance(): BaseAdapter<*> = LaunchImagesAdapter()
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        recyclerView.layoutManager = GridLayoutManager(requireActivity(), calculateNoOfColumns(requireActivity()))
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -105,4 +107,5 @@ class LaunchInfoFragment : BaseFragment(), LaunchInfoContract.View {
         presenter.detach()
     }
 
+    override fun createManagerInstance(): RecyclerView.LayoutManager = GridLayoutManager(requireActivity(), calculateNoOfColumns(requireActivity()))
 }
