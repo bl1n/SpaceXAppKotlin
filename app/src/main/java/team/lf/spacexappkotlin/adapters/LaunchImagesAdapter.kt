@@ -21,7 +21,7 @@ class LaunchImagesAdapter: BaseAdapter<LaunchImagesAdapter.LaunchImageViewHolder
         override fun bind(item: Any) {
             let {
                 item as String
-                Picasso.get().load(item).resize(450,450).placeholder(R.drawable.ic_spacex_vector_logo).into(view.li_launch_image)
+                Picasso.get().load(item).resize(550,550).placeholder(R.drawable.ic_spacex_vector_logo).into(view.li_launch_image)
 //                Glide.with(view.context)
 //                    .load(item)
 //                    .placeHolder()
