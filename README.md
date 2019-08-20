@@ -5,5 +5,6 @@
 <li> Room</li>
 <li> Moxy</li>
 <li> Bookmarks</li>
-<li> Expand image on click (alertdialog with custom view???)</li>
+<li> Expand image on click </li>
+<li> fix presenter (double creating) </li>
 </ul>
